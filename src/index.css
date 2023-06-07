@@ -1,5 +1,7 @@
 :root{
-  --gb-color: #1d1d1d;
+  --bg-color: #1d1d1d;
+  --main-accent-color: #fecc01;
+  --bg-light-color : #888
 }
 body {
   margin: 0;
@@ -14,3 +16,4 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+

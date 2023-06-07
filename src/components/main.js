@@ -3,9 +3,6 @@ import GroupList from './group-lists';
 
 function Main() {
 
-
-
-
   return (
     <div className="main">
        <GroupList />

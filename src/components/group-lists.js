@@ -5,7 +5,7 @@ function GroupList() {
 
   const [ loading, setLoading] = useState(false)
   const [ groups, setGroups] = useState(null)
-  const [ error, setError] = useState(false)
+  const [ error, setError] = useState(null)
 
   //if(error) return <h1>Error</h1>
   //if(loading) return <h1>Loading</h1>
@@ -19,7 +19,7 @@ function GroupList() {
           setGroups(data);
       })
       .catch(err => {
-        setError(true);
+        setError(err);
       });
     }
     getData();
@@ -27,14 +27,19 @@ function GroupList() {
 
   return (
     <div>
-        { groups && groups.map(group => {
+        {error && console.log(error)}
+        {groups ? 
+        groups.map(group => {
           return (
             <div key = {group.id}>
               <h3>{group.name}</h3>
               <p>{group.location}</p>
             </div>
           )
-        })}
+        })
+        :
+        <h3>Nothing to display</h3>
+      }
     </div>
   );
 }
